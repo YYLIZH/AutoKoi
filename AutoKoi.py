@@ -17,8 +17,8 @@ def AutoClick():
 
 #在函式中重複呼叫，重複按4組
 #use resursive function to repeat calling the function
-    for i in range(4):
-        for j in range(3):
+    for i in range(5):
+        for j in range(4):
             pyautogui.click(target)
     global timer
     timer = threading.Timer(3000, AutoClick)
