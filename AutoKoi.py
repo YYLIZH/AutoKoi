@@ -21,10 +21,10 @@ def AutoClick():
         for j in range(4):
             pyautogui.click(target)
     global timer
-    timer = threading.Timer(3000, AutoClick)
+    timer = threading.Timer(3000, AutoClick)   #3000秒後重來一次
     timer.start()
 
 #第一次可以設定什麼時候開始
 #set when will the first click
-timer = threading.Timer(1, AutoClick)
+timer = threading.Timer(1, AutoClick) #代表1秒後
 timer.start()
