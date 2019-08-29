@@ -6,7 +6,7 @@ import random
 now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 target = pyautogui.position()
 print(now)
-target_pix = pyautogui.screenshot().getpixel(target)
+
 
 
 
@@ -22,9 +22,9 @@ def AutoClick():
         pyautogui.click(target)
         pyautogui.click(target)
         pyautogui.click(target)
-        # 在此檢查RGB三色，然後跟最早的比對
+        # 在此檢查RGB三色，然後比對是否是橘色
         now_pix = pyautogui.screenshot().getpixel(target)
-        if now_pix == target_pix:
+        if now_pix[0] > 220:
             pyautogui.click(target)
         else:
             pass
@@ -32,7 +32,7 @@ def AutoClick():
 
 
 # 設定延時執行的秒數
-time.sleep(2400)
+time.sleep(500)
 # 開始執行程式，由於後面sched的interval排程無法執行第一次，所以我們先讓他執行一次
 AutoClick()
 sched = BlockingScheduler()
